@@ -40,20 +40,28 @@
     <!-- Your main view, should have "view-main" class-->
     <div class="view view-main">
         <!-- Top Navbar-->
-        <div class="navbar title-bar">
-            <div class="navbar-inner">
+        <div class="navbar title-bar" style="background-color: #333333;">
+            <div class="navbar-inner" style="padding-right: 0px; padding-left: 0px;">
+              <div class="left">
+                <a href="#" class="link icon-only open-panel">
+                  <i class="icon icon-bars" style="color: white;"></i>
+                </a>
+              </div>
                 <!-- We have home navbar without left link-->
-                <div class="left title-clock">
-                    <time class="time">{{clock}}</time>
-                    <time class="date">{{date}}</time>
-                </div>
-                <div class="left alert-bar open-popover" data-popover=".popover-alerts"><i
-                        class="fa fa-exclamation-triangle" aria-hidden="true"></i> You have 1 new alert
+                
+                <!-- <div class="left alert-bar open-popover" data-popover=".popover-alerts">
+                  <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> You have 1 new alert
+                </div> -->
+                <div class="left alert-bar">
+                    <!-- Right link contains only icon - additional "icon-only" class-->
+                    Master Bedroom
                 </div>
                 <div class="right">
-                    <!-- Right link contains only icon - additional "icon-only" class--><a href="#"
-                                                                                           class="link icon-only open-panel">
-                    <i class="icon icon-bars"></i></a>
+                  Cascades
+                </div>
+                <div class="right title-clock">
+                    <time class="time">{{clock}}</time>
+                    <time class="date">{{date}}</time>
                 </div>
             </div>
         </div>
@@ -89,9 +97,9 @@
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide temperature">
                                                 <hr>
-                                                <h1>Indoor Temperature</h1>
+                                                <h1>Occupied</h1>
                                                 <i class="fa fa-thermometer-three-quarters"></i>
-                                                <span class="temp" data-entity="sensor.nest_indoor_temperature"></span>&deg;F
+                                                <span class="temp" data-entity="sensor.nest_indoor_temperature">74</span>&deg;F
                                             </div>
                                             <div class="swiper-slide temperature">
                                                 <hr>
@@ -157,39 +165,41 @@
                                         <div class="item-content"><b>2</b> lights are on</div>
                                     </a>
                                 </li>
+                                <hr>
                                 <li>
-                                    <a href="#">
-                                        <div class="item-title">Outdoor</div>
-                                        <div class="item-content">All lights are off</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="item-title">Living Room</div>
+                                    <a class="tab-link tab-link-active" href="#tab-lights-main">
+                                        <div class="item-title">Main Floor & Stairs</div>
                                         <div class="item-content"><b>2</b> lights are on</div>
                                     </a>
                                 </li>
                                 <li>
+                                    <a class="tab-link" href="#tab-lights-master-bedroom">
+                                        <div class="item-title">Master Bedroom</div>
+                                        <div class="item-content">All lights are off</div>
+                                    </a>
+                                </li>
+                                
+                                <li>
                                     <a href="#">
-                                        <div class="item-title">Kitchen</div>
+                                        <div class="item-title">Collin Bedroom</div>
                                         <div class="item-content">All lights are off</div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="item-title">Bedrooms</div>
+                                        <div class="item-title">Kevan Bedroom</div>
                                         <div class="item-content">All lights are off</div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="item-title">Bathrooms</div>
+                                        <div class="item-title">Office</div>
                                         <div class="item-content">All lights are off</div>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <div class="item-title">Misc</div>
+                                        <div class="item-title">Bathrooms & Laundry</div>
                                         <div class="item-content">All lights are off</div>
                                     </a>
                                 </li>
@@ -197,38 +207,118 @@
                         </div>
                         <div class="col-75" style="margin-left: calc((100% - 15px*3)/ 4);">
                             <div class="content-block">
+                              
+                              <div class="tabs">
+                                <div class="tab tab-active" id="tab-lights-master-bedroom">
+                              
 								<div class="lights">
 									<div class="light">
-										<h1>Front Porch</h1>
-										<p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></p>
+                    <h5>Master Bedroom</h5>
+										<h1>Side Table Lamps</h1>
+										<p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>ON</h1>
 									</div>
 									<div class="light">
-										<h1>Back Porch</h1>
-										<p class="status"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></p>
-									</div>
+                    <h5>Master Bedroom</h5>
+										<h1>Fan Light</h1>
+										<p class="status"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>OFF</h1>
+                  </div>
 									<div class="light">
-										<h1>Entryway</h1>
-										<p class="status"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></p>
-									</div>
+                    <h5>Master Bedroom</h5>
+										<h1>Fan</h1>
+										<p class="status"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>OFF</h1>
+                  </div>
 									<div class="light">
-										<h1>Living Room Main</h1>
-										<p class="status"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></p>
-									</div>
-									<div class="light">
-										<h1>Living Room Ambient</h1>
-										<p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></p>
-									</div>
+                    <h5>Master Bedroom</h5>
+										<h1>Workspace</h1>
+										<p class="status"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>OFF</h1>
+                  </div>
+                  <div class="light">
+                    <h5>Master Bedroom</h5>
+										<h1>Closet</h1>
+										<p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+									  <h1>ON</h1>
+                  </div>
+                  
+                </div>
+                
+              </div>
+            </div>
+            <div class="tabs">
+              <div class="tab" id="tab-lights-main">
+                
+                <div class="lights">
+                  
+                  <div class="light">
+                    <h5>Master Bedroom</h5>
+                    <h1>Bath Shower</h1>
+                    <p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>ON</h1>
+                  </div>
+                  <div class="light">
+                    <h5>Master Bedroom</h5>
+                    <h1>Bath Sinks</h1>
+                    <p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>ON</h1>
+                  </div>
+                  <div class="light">
+                    <h5>Master Bedroom</h5>
+                    <h1>Bath Toilet</h1>
+                    <p class="status on"><i class="fa fa-lightbulb-o" aria-hidden="true" style="padding-right: 0px"></i></p>
+                    <h1>ON</h1>
+                  </div>
 								</div>
+                
+                
+              </div>
+            </div>
+                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- CLIMATE -->
             <div data-page="climate" class="page cached page-climate">
                 <div class="page-content">
                     <div class="content-block">
-						<h1>Climate</h1>
-					</div>
+            <h1>Climate</h1>
+            </div>
+                </div>
+            </div>
+            <!-- BLINDS -->
+            <div data-page="blinds" class="page cached page-blinds">
+                <div class="page-content">
+                    <div class="content-block">
+            <h1>Blinds</h1>
+            </div>
+                </div>
+            </div>
+            <!-- SOUND -->
+            <div data-page="sound" class="page cached page-sound">
+                <div class="page-content">
+                    <div class="content-block">
+            <h1>Sound</h1>
+            </div>
+                </div>
+            </div>
+            <!-- SECURITY -->
+            <div data-page="security" class="page cached page-security">
+                <div class="page-content">
+                    <div class="content-block">
+            <h1>Security</h1>
+            </div>
+                </div>
+            </div>
+            <!-- CCTV -->
+            <div data-page="cctv" class="page cached page-cctv">
+                <div class="page-content">
+                    <div class="content-block">
+            <h1>CCTV</h1>
+            </div>
                 </div>
             </div>
         </div>
@@ -241,11 +331,11 @@
                         class="tabbar-label">Lighting</span></a>
                 <a href="#climate" class="link"><i class="icon fa fa-thermometer-three-quarters" aria-hidden="true"></i><span
                         class="tabbar-label">Climate</span></a>
-                <a href="#" class="link"><i class="icon fa fa-television" aria-hidden="true"></i><span
-                        class="tabbar-label">Appliances</span></a>
-                <a href="#" class="link"><i class="icon fa fa-wifi" aria-hidden="true"></i><span class="tabbar-label">Communication</span></a>
-                <a href="#" class="link"><i class="icon fa fa-lock" aria-hidden="true"></i><span class="tabbar-label">Security</span></a>
-                <a href="#" class="link"><i class="icon fa fa-video-camera" aria-hidden="true"><span
+                <a href="#blinds" class="link"><i class="icon fa fa-sort-amount-asc" aria-hidden="true"></i><span
+                        class="tabbar-label">Blinds</span></a>
+                <a href="#sound" class="link"><i class="icon fa fa-volume-up" aria-hidden="true"></i><span class="tabbar-label">Audio</span></a>
+                <a href="#security" class="link"><i class="icon fa fa-lock" aria-hidden="true"></i><span class="tabbar-label">Security</span></a>
+                <a href="#cctv" class="link"><i class="icon fa fa-video-camera" aria-hidden="true"><span
                         class="badge bg-red">5</span></i><span class="tabbar-label">CCTV</span></a>
                 <a href="#" class="link"><i class="icon fa fa-cog" aria-hidden="true"></i><span class="tabbar-label">Settings</span></a>
             </div>
